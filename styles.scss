@@ -1,0 +1,168 @@
+
+$mainColor : #023430;
+
+html{
+    font-size: 16px;
+    font-family: Akzidenz-Grotesk Std;
+}
+
+body{
+    margin: 0;
+    background-color: white;
+    width: 100%;
+    padding: 0;
+}
+
+code {
+    padding: 1em;
+    border: 1px solid $mainColor;
+    box-shadow: #0234306e 2px 2px;
+    margin: 0.5em auto 1em;
+    display: block;
+}
+
+p{
+    margin: 2em auto 1em
+}
+
+header{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#collapsable-menu{
+    display: inline-block;
+    position: sticky;
+    height: 2.5em;
+    width: 2.5em;
+    background-color: $mainColor;
+    border-radius: 0.2em;
+}
+
+#navbar {
+    padding: 2em 0.5em 0;
+    max-width: 250px;
+    min-width: 200px;
+    width: 20%;
+    height: 100%;
+    vertical-align: top;
+    position: fixed;
+    background-color: $mainColor;
+
+    header{
+        font-size: 2em;
+        font-weight: 500;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 1.5em;
+        color: whitesmoke;
+    }
+}
+
+
+#main-doc {
+    padding: 0 2em 2em;
+    width: 60%;
+    margin: auto;
+    display: block;
+    overflow-wrap: normal;
+
+    section:first-of-type header {
+        padding-top: 1.5em;
+    }
+}
+
+
+.main-section {
+    padding: 1em;
+}
+
+
+#navbar {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: block;
+        padding: 0;
+        margin-top: 2em;
+        margin-left: 2em;
+    }
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgba(246, 253, 237, 0.815);
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.nav-link:hover{
+    font-size: 20px;
+    color: rgb(246, 253, 237);
+}
+
+@media screen and (max-width: 860px) {
+    #navbar {
+        display: none;
+        left: 0;
+        top: 0;
+    }
+    
+    #collapsable-menu {
+        margin-top: 2em;
+        top: 5px;
+        left: 0.3em;
+        height: 2.5em;
+        width: 2.5em;
+        background-color: $mainColor;
+        border-radius: 0.2em;
+        display: inline-flex;
+        position: sticky;
+        vertical-align: top;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }   
+    #navbar:hover {
+        display: block;
+    }
+    #collapsable-menu:hover {
+        margin-top: 0;
+
+        #navbar {
+            display: block;
+        }
+
+        .line {
+            display: none;
+        }
+    }
+
+    div.line{
+        display: block;
+        width: 2em;
+        height: 2px;
+        background-color: white;
+        border-radius: 2px;
+    }
+
+    #main-doc {
+        margin: calc(-4.5em - 5px) auto 0;
+        width: 90%;
+    }
+
+    html{
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (min-width: 860px) and (max-width:1400px) {
+    #main-doc {
+        width: 70%;
+        margin-left: 25%;
+    }
+}
