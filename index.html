@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>MongoDb Documentation</header>
+        <ul>
+            <li><a href="#Docs_Home" class="nav-link">Docs Home</a></li>
+            <li><a href="#Develop_Applications" class="nav-link">Develop Applications</a></li>
+            <li><a href="#What_is_MongoDB_Atlas" class="nav-link">What is MongoDB Atlas</a></li>
+            <li><a href="#MongoDB_CSharp_Driver" class="nav-link">MongoDB CSharp Driver</a></li>
+            <li><a href="#Start_with_Guides" class="nav-link">Start with Guides</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Docs_Home">
+            <header>Docs Home</header>
+            <h3>Welcome to the MongoDB Documentation</h3>
+            <p>Find the guides, samples, and references you need to use the database, visualize data, and build
+                applications on the MongoDB data platform.</p>
+            <h3>What are you going to learn?</h3>
+            <ul>
+                <li>Use MongoDB</li>
+                <li>Deploy with MongoDB Atlas</li>
+                <li>Connect your application</li>
+                <li>Explore your data</li>
+                <li>Build data visualizations</li>
+            </ul>
+            <h3>Learn through examples and best practices</h3>
+            <p>
+                Zoe works at a university that uses MongoDB to store student records. Since her background is in SQL,
+                Zoe reads the
+                MongoDB Manual to learn how to build queries using the MongoDB Shell.</p>
+
+        </section>
+        <section class="main-section" id="Develop_Applications">
+            <header>Develop Applications</header>
+            <h3>What is MongoDB?</h3>
+            <p>MongoDB is a document database designed for ease of application development and scaling.</p>
+            <p>Build modern applications with MongoDB, a general purpose, document-based, distributed database built for
+                application developers.</p>
+        </section>
+        <section class="main-section" id="What_is_MongoDB_Atlas">
+            <header>What is MongoDB Atlas</header>
+            <p>MongoDB Atlas is a multi-cloud database service by the same people that build MongoDB. Atlas simplifies deploying and managing your databases while offering the versatility you need to build resilient and performant global applications on the cloud providers of your choice.</p>
+            <code>atlas setup [options]</code>
+
+        </section>
+        <section class="main-section" id="MongoDB_CSharp_Driver">
+            <header>MongoDB CSharp Driver</header>
+            <h4>Installation</h4>
+            <p>NuGet is the simplest way to get the driver:</p>
+            <code>PM > Install-Package MongoDB.Driver -Version 2.17.0</code>
+            <p>.NET CLI:</p>
+            <code>dotnet add package MongoDB.Driver --version 2.17.0</code>
+            <h4>Connect to MongoDB Atlas</h4>
+            <p>To connect to a MongoDB Atlas cluster, use the Atlas connection string for your cluster:</p>
+            <code>
+                using MongoDB.Bson;
+                using MongoDB.Driver;
+
+                // Replace the uri string with your MongoDB deployment's connection string.
+                var client = new MongoClient(
+                    "mongodb+srv://&lt;username>:&lt;password>@&lt;cluster-address>/test?w=majority"
+                );
+                var database = client.GetDatabase("test");
+            </code>
+            <h4>Stable API</h4>
+            <p>You can use the Stable API feature starting with MongoDB Server version 5.0 and C#/.NET Driver version 2.13. When you use the Stable API feature, you can update your driver or server without worrying about backward compatibility issues with any commands covered by the Stable API.</p>
+            <p>To use this feature, construct a MongoDB client instance, specifying a version of the Stable API:
+            </p>
+            <code>
+                // Replace &lt;connection string> with your MongoDB deployment's connection string.
+                    var settings = MongoClientSettings.FromConnectionString("&lt;connection string>");
+                    // Set the version of the Stable API on the client.
+                    settings.ServerApi = new ServerApi(ServerApiVersion.V1);
+                    var client = new MongoClient(settings);
+                    
+            </code>
+        </section>
+        <section class="main-section" id="Start_with_Guides">
+            <header>Start with Guides</header>
+            <p>Discover <a href="https://www.mongodb.com/docs/guides/" target="_blank">step-by-step guides</a> to help you complete essential tasks to get started with MongoDB</p>
+        </section>
+    </main>
+</body>
+
+</html>
